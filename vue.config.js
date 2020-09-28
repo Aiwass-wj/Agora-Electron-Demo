@@ -36,7 +36,7 @@ const config = {
                     app: "./dist_electron/bundled",
                     output: "dist_electron"
                 },
-                asar: false,
+                asar: true,
                 mac: {
                     target: [
                         "dmg"
