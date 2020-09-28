@@ -73,6 +73,10 @@ const config = {
                             "ia32",
                             // "x64"
                         ]
+                    }],
+                    extraFiles: [{
+                        "from": "node_modules/agora-electron-sdk/build/Release",
+                        "to": './resources'
                     }]
                 },
                 nsis: {
@@ -84,19 +88,6 @@ const config = {
             }
         }
     }
-}
-
-if (process.env.NODE_ENV === 'production') {
-  	// 文档：https://www.electron.build/configuration/contents#extrafiles
-  	// 把agora-electron-sdk的Release文件夹复制到应用程序的目录中
-    config.pluginOptions.electronBuilder.builderOptions.mac.extraFiles = [{
-        "from": "node_modules/agora-electron-sdk/build/Release",
-        "to": './Resources'
-    }];
-    config.pluginOptions.electronBuilder.builderOptions.win.extraFiles = [{
-        "from": "node_modules/agora-electron-sdk/build/Release",
-        "to": './resources'
-    }];
 }
 
 module.exports = config;
